@@ -27,5 +27,7 @@ KipuBank es un contrato inteligente que permite a los usuarios depositar y retir
 - **Consultar historial:** `getDepositHistory(address user)` o `getWithdrawHistory(address user)`.
 - **Dueño:** `getUserMovements(address user)` para historial completo.
 
-## Dirección del contrato
+## Dirección del contrato anterior
 0x9Ae2004220931735B7b67013E39Ac1E6D34758F5
+## Dirección del contrato corregido
+0xce1041e3905b0308A9d2Fc41e6601e4DB49F14F1

@@ -122,7 +122,7 @@ contract KipuBank {
     function deposit() external payable {
         uint256 amount = msg.value;
         if (amount == 0) revert ZeroDeposit();
-        if (totalDeposited + amount > bankCap) revert BankCapExceeded(totalDeposited + amount, bankCap);
+        if (address(this).balance > bankCap) revert BankCapExceeded(address(this).balance, bankCap);
 
         vault[msg.sender] += amount;
         totalDeposited += amount;
@@ -221,5 +221,8 @@ contract KipuBank {
         if (msg.sender != owner) revert NotOwner();
         return _getAllUserMovements(user);
     }
-}
 
+    function getBankBalance() public view returns (uint256) {
+        return address(this).balance;
+    }
+}
